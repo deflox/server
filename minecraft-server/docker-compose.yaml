@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      INIT_MEMORY: "1G"
+      MAX_MEMORY: "2G"
+      MOTD: "Leos and Mariias Minecraft Server"
+      DIFFICULTY: "normal"
+      MAX_PLAYERS: "2"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: "false"
+      ENABLE_COMMAND_BLOCK: "true"
+      SNOOPER_ENABLED: "false"
+      VIEW_DISTANCE: "32"
+      MODE: "survival"
+      ENABLE_WHITELIST: "true"
+      WHITELIST: "9079e523-7b80-4d1b-b89b-975821c72d1b,7cfde5a6-3fa2-48b0-a830-5b57081c3f52"
+      RCON_PASSWORD: ""
+      ENABLE_AUTOPAUSE: "true"
+    volumes:
+      - ./mc-server-data:/data
